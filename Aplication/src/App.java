@@ -11,7 +11,7 @@ public class App {
 
         /*
          * Dev: JPMendes
-         * Ação: ativar e crair variavel para o Scanner, importante para ler as informações 
+         * Ação: ativar e criar variavel para o Scanner, importante para ler as informações 
          */
         Scanner myObj = new Scanner(System.in);
         Scanner myInt = new Scanner(System.in);
