@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 11/03/2025 às 20:08
+-- Tempo de geração: 14/03/2025 às 16:19
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.0.30
 
@@ -68,7 +68,7 @@ CREATE TABLE `vendas` (
   `Cod_Barras` varchar(35) DEFAULT NULL,
   `Subtotal` double DEFAULT NULL COMMENT 'Subtotal da venda em BRL',
   `Total` double DEFAULT NULL COMMENT 'Total da venda em BRL',
-  `Forma_De_Pagamento` text DEFAULT NULL,
+  `Forma_De_Pagamento` int(11) DEFAULT NULL,
   `data_venda` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -81,7 +81,8 @@ CREATE TABLE `vendas` (
 --
 ALTER TABLE `pagamento`
   ADD PRIMARY KEY (`ID_Pagamento`),
-  ADD UNIQUE KEY `Forma_Pagamento` (`Forma_Pagamento`) USING HASH;
+  ADD UNIQUE KEY `Forma_Pagamento` (`Forma_Pagamento`) USING HASH,
+  ADD KEY `idx_pagamento` (`ID_Pagamento`);
 
 --
 -- Índices de tabela `produtos`
@@ -96,7 +97,8 @@ ALTER TABLE `produtos`
 ALTER TABLE `vendas`
   ADD PRIMARY KEY (`ID_Venda`),
   ADD KEY `ligação entre produto e vendas cod` (`Cod_Barras`),
-  ADD KEY `ligação entre produto e vendas id` (`ID_Produto`);
+  ADD KEY `ligação entre produto e vendas id` (`ID_Produto`),
+  ADD KEY `ligação com a forma de pagamento` (`Forma_De_Pagamento`);
 
 --
 -- AUTO_INCREMENT para tabelas despejadas
@@ -128,6 +130,7 @@ ALTER TABLE `vendas`
 -- Restrições para tabelas `vendas`
 --
 ALTER TABLE `vendas`
+  ADD CONSTRAINT `ligação com a forma de pagamento` FOREIGN KEY (`Forma_De_Pagamento`) REFERENCES `pagamento` (`ID_Pagamento`),
   ADD CONSTRAINT `ligação entre produto e vendas cod` FOREIGN KEY (`Cod_Barras`) REFERENCES `produtos` (`Cod_Barras`),
   ADD CONSTRAINT `ligação entre produto e vendas id` FOREIGN KEY (`ID_Produto`) REFERENCES `produtos` (`ID_Produto`);
 COMMIT;
