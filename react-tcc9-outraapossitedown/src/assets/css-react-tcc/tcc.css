@@ -1,0 +1,234 @@
+@font-face {
+    font-family: 'Mont-HeavyDEMO' ;
+    src: url('./assets/fonts/Mont-HeavyDEMO.otf');
+}
+
+@font-face {
+    font-family: 'Bigail';
+    src: url('./assets/fonts/Bigail.ttf') format('truetype'); /* Certifique-se de definir o formato da fonte */
+}
+
+ body {
+    background-color: #212121;
+    color: #f5f5f5;
+    font-family: sans-serif;
+    margin: 0 ;
+    padding:0;
+    flex-direction: column;
+    width: 100%
+}
+html{
+    scroll-behavior: smooth;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    
+}
+
+#title h1 {
+    font-size: 2.5;
+    flex-direction: column;
+    line-height: 1.2;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-family: Bigail;
+    margin-bottom: 10px;
+}
+ul{
+   list-style-type: none;
+   padding: 0;
+   margin-top: 20px;
+   text-align: center; 
+
+}
+ul li {
+    display: inline-block;
+    margin-right: 30px;
+    
+}
+ul li a {
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 8px 15px;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+ul li a:hover {
+    background-color: orangered;
+    transform: scale(1.1);
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    flex-wrap: wrap;
+ 
+}
+
+/* Estilo do aside */
+aside {
+    background-color: #fff;
+    padding: 25px;
+    width: 28%;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+aside h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 10px;
+}
+
+aside p {
+    font-size: 1rem;
+    color: #7f8c8d;
+    margin-bottom: 20px;
+}
+
+/* Efeito de hover no aside */
+aside:hover {
+    transform: translateY(-10px);
+}
+
+/* Estilo das seções */
+section {
+    background-color: #fff;
+    padding: 30px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section h3 {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 15px;
+}
+
+section p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo do footer */
+
+
+/* Marca Section */
+.marca {
+    background-color: #ecf0f1;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.marca h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #34495e;
+    margin-bottom: 15px;
+}
+
+.marca p {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+}
+
+/* Estilo para links */
+a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: orangered;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+main {
+    flex: 1; /* Faz com que o conteúdo ocupe todo o espaço disponível */
+}
+
+footer {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    width: 100%;
+    margin-top: auto; /* Isso empurra o footer para o final da página */
+
+}
+
+
+/* Responsividade para dispositivos móveis */
+@media screen and (max-width: 768px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    aside {
+        width: 90%;
+        margin-bottom: 30px;
+    }
+
+    section {
+        width: 90%;
+    }
+
+    ul li {
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    html, body {
+        height: 100%;
+        width:100%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        overflow-x: hidden;
+    }
+    
+    main {
+        flex: 1; /* Faz com que o conteúdo ocupe todo o espaço disponível */
+    }
+    
+    footer {
+        background-color: #1e1e1e;
+        color: #ffffff;
+        text-align: center;
+        padding: 10px;
+        font-size: 14px;
+        width: 100%;
+        margin-top: auto; /* Isso empurra o footer para o final da página */
+    }
+    
+}
+
