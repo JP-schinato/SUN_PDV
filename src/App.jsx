@@ -9,12 +9,15 @@ function App() {
                 <div id="title">
                     <h1>Sistema PDV</h1>
                 </div>
+                
                 <ul>
+
                     <Link to="/Home"><li>Home</li></Link>
                    
                     <Link to="/Sobre-Nos"><li>Sobre Nós</li></Link>
                     
                     
+
                     <Link to="/Download"><li>Download</li> </Link>
                     
                 </ul>

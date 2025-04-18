@@ -11,7 +11,7 @@
 body {
   background-color: #212121;
   color: #f5f5f5;
-  font-family: sans-serif;
+  font-family: 'Bigail';
   margin: 0 ;
   padding:0;
   flex-direction: column;
@@ -37,7 +37,7 @@ header {
   display: flex;
   justify-content: center;
   text-align: center;
-  font-family: Bigail;
+  font-family: "Bigail";
   margin-bottom: 10px;
 }
 ul{

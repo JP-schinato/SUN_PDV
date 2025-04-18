@@ -12,6 +12,7 @@ createRoot(document.getElementById('root')).render(
       <Route path="/" element={<App />} />
       <Route path="/Home" element={<PagHom />} />
       <Route path="/Sobre-Nos" element={<PagSobr />} />
+     
       <Route path="/Download" element={<PagDown />} />
     </Routes>
   </BrowserRouter>
